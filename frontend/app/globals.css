@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #fafbfc;
+  --border: #e6e8ec;
+  --border-strong: #d4d7de;
+  --text: #0b1020;
+  --text-2: #4b5563;
+  --text-3: #8a92a3;
+  --accent: #10b981;
+  --accent-2: #059669;
+  --accent-soft: #ecfdf5;
+  --accent-border: #a7f3d0;
+  --danger: #ef4444;
+  --warn: #f59e0b;
+  --info: #0ea5e9;
+  --violet: #8b5cf6;
+  --row-h: 36px;
+  --sidebar-w: 232px;
+  --topbar-h: 48px;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --shadow-sm: 0 1px 2px rgba(10, 14, 30, 0.04), 0 0 0 1px rgba(10, 14, 30, 0.04);
+  --shadow-md: 0 4px 12px rgba(10, 14, 30, 0.06), 0 0 0 1px rgba(10, 14, 30, 0.05);
+  --shadow-lg: 0 20px 48px -12px rgba(10, 14, 30, 0.18), 0 0 0 1px rgba(10, 14, 30, 0.06);
+}
+
+html[data-theme="dark"] {
+  --bg: #0b0f17;
+  --surface: #11151f;
+  --surface-2: #0e1219;
+  --border: #1f2636;
+  --border-strong: #2a3245;
+  --text: #e7ebf3;
+  --text-2: #9aa3b7;
+  --text-3: #6b7489;
+  --accent-soft: #052e24;
+  --accent-border: #064e3b;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-lg: 0 24px 60px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+html[data-density="compact"] {
+  --row-h: 30px;
+  --topbar-h: 44px;
+}
+html[data-density="comfortable"] {
+  --row-h: 44px;
+  --topbar-h: 56px;
+}
+
+html[data-accent="indigo"] {
+  --accent: #6366f1;
+  --accent-2: #4f46e5;
+  --accent-soft: #eef2ff;
+  --accent-border: #c7d2fe;
+}
+html[data-accent="amber"] {
+  --accent: #f59e0b;
+  --accent-2: #d97706;
+  --accent-soft: #fffbeb;
+  --accent-border: #fcd34d;
+}
+html[data-accent="rose"] {
+  --accent: #f43f5e;
+  --accent-2: #e11d48;
+  --accent-soft: #fff1f2;
+  --accent-border: #fecdd3;
+}
+html[data-accent="slate"] {
+  --accent: #64748b;
+  --accent-2: #475569;
+  --accent-soft: #f1f5f9;
+  --accent-border: #cbd5e1;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-3);
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, Menlo, monospace;
+}
