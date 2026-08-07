@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/share/[token]/page": "app/share/[token]/page.js",
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/dashboard/files/[folderId]/page": "app/dashboard/files/[folderId]/page.js",
+  "/(auth)/register/page": "app/(auth)/register/page.js",
+  "/dashboard/shares/page": "app/dashboard/shares/page.js",
+  "/dashboard/ai/page": "app/dashboard/ai/page.js",
+  "/dashboard/files/view/[fileId]/page": "app/dashboard/files/view/[fileId]/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/search/page": "app/dashboard/search/page.js",
+  "/dashboard/settings/page": "app/dashboard/settings/page.js",
+  "/dashboard/tags/page": "app/dashboard/tags/page.js",
+  "/dashboard/storages/page": "app/dashboard/storages/page.js",
+  "/dashboard/ask/page": "app/dashboard/ask/page.js",
+  "/dashboard/files/page": "app/dashboard/files/page.js"
+}

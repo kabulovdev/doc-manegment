@@ -1,4 +1,4 @@
-.PHONY: up-dev up-prod down logs backend-run backend-build backend-test frontend-dev frontend-build fmt help
+.PHONY: up-dev up-prod down logs backend-run backend-build backend-test frontend-dev frontend-build frontend-dist fmt help
 
 help:
 	@echo "Targets:"
@@ -11,6 +11,7 @@ help:
 	@echo "  backend-test   — go test ./..."
 	@echo "  frontend-dev   — npm run dev"
 	@echo "  frontend-build — npm run build"
+	@echo "  frontend-dist  — standalone deploy build: make frontend-dist API_BASE=http://IP:8080/api/v1"
 	@echo "  fmt            — gofmt backend + prettier frontend (best effort)"
 
 up-dev:
@@ -39,6 +40,14 @@ frontend-dev:
 
 frontend-build:
 	cd frontend && npm run build
+
+frontend-dist:
+	@test -n "$(API_BASE)" || (echo "API_BASE berilmadi. Masalan: make frontend-dist API_BASE=http://1.2.3.4:8080/api/v1"; exit 1)
+	cd frontend && NEXT_PUBLIC_API_BASE=$(API_BASE) npm run build
+	rm -rf frontend-dist
+	cp -R frontend/.next/standalone frontend-dist
+	cp -R frontend/.next/static frontend-dist/.next/static
+	cp -R frontend/public frontend-dist/public
 
 fmt:
 	cd backend && gofmt -w .

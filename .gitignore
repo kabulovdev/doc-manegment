@@ -11,3 +11,7 @@ tmp/
 backend/tmp/
 *.test
 *.out
+
+# frontend deploy build — to'liq track qilinadi
+!frontend-dist/
+!frontend-dist/**
