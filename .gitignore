@@ -1,0 +1,13 @@
+.env
+.env.local
+*.log
+node_modules/
+.next/
+out/
+dist/
+tmp/
+
+# Go
+backend/tmp/
+*.test
+*.out
