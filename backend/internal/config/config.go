@@ -25,6 +25,7 @@ type Config struct {
 	AllowHTTP      bool          `env:"ALLOW_HTTP_ENDPOINTS" envDefault:"false"`
 	QdrantURL      string        `env:"QDRANT_URL" envDefault:""`
 	QdrantAPIKey   string        `env:"QDRANT_API_KEY" envDefault:""`
+	EnableLoadTest bool          `env:"ENABLE_LOAD_TEST" envDefault:"false"`
 
 	MasterKey []byte `env:"-"`
 }

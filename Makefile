@@ -1,4 +1,4 @@
-.PHONY: up-dev up-prod down logs backend-run backend-build backend-test frontend-dev frontend-build frontend-dist fmt help
+.PHONY: up-dev up-prod down logs backend-run backend-build backend-test backend-linux frontend-dev frontend-build frontend-dist fmt help
 
 help:
 	@echo "Targets:"
@@ -9,6 +9,7 @@ help:
 	@echo "  backend-run    — run Go backend against local env"
 	@echo "  backend-build  — go build ./..."
 	@echo "  backend-test   — go test ./..."
+	@echo "  backend-linux  — cross-compile api+purge binaries for linux/amd64 (VM deploy)"
 	@echo "  frontend-dev   — npm run dev"
 	@echo "  frontend-build — npm run build"
 	@echo "  frontend-dist  — standalone deploy build: make frontend-dist API_BASE=http://IP:8080/api/v1"
@@ -34,6 +35,10 @@ backend-build:
 
 backend-test:
 	cd backend && go test ./...
+
+backend-linux:
+	cd backend && GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o bin/api ./cmd/api
+	cd backend && GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o bin/purge ./cmd/purge
 
 frontend-dev:
 	cd frontend && npm run dev

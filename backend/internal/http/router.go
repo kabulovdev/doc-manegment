@@ -172,6 +172,15 @@ func NewRouter(d Deps) http.Handler {
 				r.Post("/ask", aiH.Ask)
 			})
 		})
+
+		// Load/autoscaling test endpoint. Disabled unless ENABLE_LOAD_TEST=true.
+		if d.Config.EnableLoadTest {
+			debugH := handlers.NewDebugHandler()
+			r.Route("/debug", func(r chi.Router) {
+				r.Get("/cpu-load", debugH.CPULoad)
+				r.Post("/cpu-load", debugH.CPULoad)
+			})
+		}
 	})
 
 	return r

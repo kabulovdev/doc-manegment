@@ -109,3 +109,14 @@ COOKIE_SECURE=false                      # http ishlatilsa; https bo'lsa true
 | `frontend-dist` ichidagi fayllar git'ga tushmayapti | Root `.gitignore` da `!frontend-dist/` va `!frontend-dist/**` qatorlari turganini tekshiring. |
 | Serverda `node server.js` xato beradi | Node versiyasini tekshiring: `node -v` — 18.17+ (tavsiya: 20). |
 | Port band | `PORT=boshqa_port node server.js` bilan boshqa portda ishga tushiring. |
+
+
+   export MONGO_USER=doc-manager
+   export MONGO_PASS=manageroftheyear
+   export JWT_SECRET=2W3ftYDqCZvh509m3Ql97kfjXLa/IBm2Ei6PCtFthESTWRX2
+   export MASTER_KEY=k1Bjvh7MGrt87eLFciVE3SbmLoT2HiDRq9KC9RWNhDM=
+   export FRONTEND_ORIGIN=http://localhost:3000
+   export NEXT_PUBLIC_API_BASE=http://localhost:8080/api/v1
+   export MINIO_USER=minio
+   export MINIO_PASS=minio12345
+   export MONGO_URI=mongodb://localhost:27017
